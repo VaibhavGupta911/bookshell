@@ -32,6 +32,7 @@ function App() {
       </Box>
       <Routes>
         <Route exact path='/' element={<Booksearchpage />}></Route>
+        <Route exact path='/bookshell' element={<Booksearchpage />}></Route>
         <Route exact path='/mybooks' element={<Mybookself />}></Route>
       </Routes>
     </>
