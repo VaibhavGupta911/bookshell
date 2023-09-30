@@ -22,7 +22,7 @@ function App() {
         transitionDuration=".3s"
         transitionTimingFunction="ease-in-out"
         //  backgroundColor="#18181b"
-        backgroundColor="#128C7E"
+        backgroundColor="#0E7065"
       >
         <HStack spacing={8} px={10}
           py='32' display='flex' justify='space-evenly' >
@@ -30,6 +30,7 @@ function App() {
           <Link style={linkstyle} to="./mybooks"  ><Text>My Book Shelf </Text></Link>
         </HStack>
       </Box>
+
       <Routes>
         <Route exact path='/' element={<Booksearchpage />}></Route>
         <Route exact path='/bookshell' element={<Booksearchpage />}></Route>
