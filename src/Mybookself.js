@@ -9,7 +9,7 @@ function Mybookself() {
         const interval = setInterval(() => {
             setBookname(JSON.parse(localStorage.getItem('book')) || []);
             console.log('This will run every 10 second');
-        }, 1000);
+        }, 3000);
         return () => clearInterval(interval);
     }, []);
 
