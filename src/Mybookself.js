@@ -9,7 +9,7 @@ function Mybookself() {
         const interval = setInterval(() => {
             setBookname(JSON.parse(localStorage.getItem('book')) || []);
             console.log('This will run every 10 second');
-        }, 3000);
+        }, 2000);
         return () => clearInterval(interval);
     }, []);
 
@@ -20,6 +20,7 @@ function Mybookself() {
             <VStack paddingTop={32} paddingBottom={32} spacing={16} >
                 <Heading as='h1' size='lg' color='white'>Book Shelf</Heading>
             </VStack>
+            
             <div className="menu-div2-card">
                 {
                     bookname.map(
@@ -30,6 +31,7 @@ function Mybookself() {
 
                                 </div>
                                 <p className="card-description">Edition Count: {e.edition_count}</p>
+                            
                                 {/* Delete Button */}
                                {/* <button className="card-button"  >Delete</button>*/} 
                             </div>

@@ -16,11 +16,18 @@ function Booksearchpage() {
         let t11 = "https://openlibrary.org/search.json?q=".concat(search).concat("&limit=10&page=1");
         console.log("OK i got api")
         console.log(t11)
-        fetch(t11).then(response => {
-            return response.json()
-        }).then(data => {
-            setPdata(data.docs)
-        })
+        // fetch(t11).then(response => {
+        //     return response.json()
+        // }).then(data => {
+        //     setPdata(data.docs)
+        // })
+
+        async function fetchfunction(){
+            const data=await fetch(t11);
+            const json=await data.json();
+            setPdata(json.docs)
+        }
+        fetchfunction();
     }
 
     function save(e, f) {
@@ -34,7 +41,7 @@ function Booksearchpage() {
         var old_book = JSON.parse(localStorage.getItem('book'));
         old_book.push({ name: new_book, edition_count: new_edition });
         localStorage.setItem('book', JSON.stringify(old_book));
-    
+
     }
     return (
         <>
@@ -63,9 +70,9 @@ function Booksearchpage() {
                         )
                     }
                 </div>
-                
+
             </Box>
-           
+
         </>
     )
 }
