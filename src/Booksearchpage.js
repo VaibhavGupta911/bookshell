@@ -10,7 +10,6 @@ function Booksearchpage() {
     const handleChange = (e) => {
         setSearch(e.target.value)
     }
-
     const apiData = () => {
         console.log("Hello Doing Search")
         let t11 = "https://openlibrary.org/search.json?q=".concat(search).concat("&limit=10&page=1");
@@ -22,10 +21,13 @@ function Booksearchpage() {
         //     setPdata(data.docs)
         // })
 
-        async function fetchfunction(){
-            const data=await fetch(t11);
-            const json=await data.json();
+        async function fetchfunction() {
+            const data = await fetch(t11);
+            console.log(data)
+            const json = await data.json();
+            console.log("json",json)
             setPdata(json.docs)
+            console.log("jsondata",json.docs)
         }
         fetchfunction();
     }
@@ -41,7 +43,6 @@ function Booksearchpage() {
         var old_book = JSON.parse(localStorage.getItem('book'));
         old_book.push({ name: new_book, edition_count: new_edition });
         localStorage.setItem('book', JSON.stringify(old_book));
-
     }
     return (
         <>
